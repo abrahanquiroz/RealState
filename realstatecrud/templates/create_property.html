@@ -19,10 +19,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'list_propiedades' %}">Listado de Propiedades</a>
+                        <a class="nav-link" href="{% url 'list_properties' %}">Listado de Propiedades</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'create_propiedades' %}">Crear Propiedad</a>
+                        <a class="nav-link" href="{% url 'create_property' %}">Crear Propiedad</a>
                     </li>
                 </ul>
             </div>
@@ -36,39 +36,39 @@
             {% csrf_token %}
             <div class="col-md-6">
                 <label for="name" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="input-name" name="name"  value="{{propiedad.name}}" required>
+                <input type="text" class="form-control" id="input-name" name="name" required>
             </div>
             <div class="col-md-6">
                 <label for="address" class="form-label">Dirección</label>
-                <input type="text" class="form-control" id="input-address" name="address" value="{{propiedad.address}}" required>
+                <input type="text" class="form-control" id="input-address" name="address" required>
             </div>
             <div class="col-md-4">
                 <label for="country" class="form-label">País</label>
-                <input type="text" class="form-control" id="input-country" name="country" value="{{propiedad.country}}" required>
+                <input type="text" class="form-control" id="input-country" name="country" required>
             </div>
             <div class="col-md-4">
                 <label for="city" class="form-label">Ciudad</label>
-                <input type="text" class="form-control" id="input-city" name="city" value="{{propiedad.city}}" required>
+                <input type="text" class="form-control" id="input-city" name="city" required>
             </div>
             <div class="col-md-4">
                 <label for="postal_code" class="form-label">Código Postal</label>
-                <input type="text" class="form-control" id="input-postal_code" name="postal_code" value="{{propiedad.postal_code}}" required>
+                <input type="text" class="form-control" id="input-postal_code" name="postal_code" required>
             </div>
             <div class="col-md-6">
                 <label for="type" class="form-label">Tipo</label>
                 <select class="form-control" id="select-type" name="type" required>
                     {% for key, value in REAL_STATE_TYPE %}
-                        <option value="{{ key }}" {% if key == propiedad.type %}selected{% endif %}>{{ value }}</option>
+                        <option value="{{ key }}">{{ value }}</option>
                     {% endfor %}
                 </select>
             </div>
             <div class="col-md-6">
                 <label for="area" class="form-label">Área (m²)</label>
-                <input type="number" class="form-control" id="input-area" name="area" value="{{propiedad.area}}" required>
+                <input type="number" class="form-control" id="input-area" name="area" required>
             </div>
         </form>
         <div class="col-12 text-center">
-            <button id="save-realstate-button" type="submit" class="btn btn-success">Crear Propiedad</button>
+            <button id="create-realstate-button" type="submit" class="btn btn-success">Crear Propiedad</button>
         </div>
     </div>
 

@@ -20,10 +20,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'list_propiedades' %}">Listado de Propiedades</a>
+                        <a class="nav-link" href="{% url 'list_properties' %}">Listado de Propiedades</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'create_propiedades' %}">Crear Propiedad</a>
+                        <a class="nav-link" href="{% url 'create_property' %}">Crear Propiedad</a>
                     </li>
                 </ul>
             </div>
@@ -36,29 +36,29 @@
         
         <!-- Botón Crear Propiedad -->
         <div class="text-center mb-4">
-            <a href="{% url 'create_propiedades' %}">
+            <a href="{% url 'create_property' %}">
                 <button type="button" class="btn btn-success">Crear Propiedad</button>
             </a>
         </div>
 
         <!-- Mostrar las propiedades en formato tarjeta -->
         <div class="row">
-            {% for propiedad in propiedades %}
+            {% for property in properties %}
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">{{ propiedad.name }}</h5>
+                            <h5 class="card-title">{{ property.name }}</h5>
                             <p class="card-text">
-                                <strong>Dirección:</strong> {{ propiedad.address }} <br>
-                                <strong>Ciudad:</strong> {{ propiedad.city }} <br>
-                                <strong>País:</strong> {{ propiedad.country }} <br>
-                                <strong>Código Postal:</strong> {{ propiedad.postal_code }} <br>
-                                <strong>Tipo:</strong> {{ propiedad.type }} <br>
-                                <strong>Área:</strong> {{ propiedad.area }} m²
+                                <strong>Dirección:</strong> {{ property.address }} <br>
+                                <strong>Ciudad:</strong> {{ property.city }} <br>
+                                <strong>País:</strong> {{ property.country }} <br>
+                                <strong>Código Postal:</strong> {{ property.postal_code }} <br>
+                                <strong>Tipo:</strong> {{ property.type }} <br>
+                                <strong>Área:</strong> {{ property.area }} m²
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <a href="{% url 'edit_propiedades' propiedad.id %}" class="btn btn-primary">Editar</a>
-                                <button id="delete-button-{{propiedad.id}}" data-id="{{propiedad.id}}" type="submit" class="btn btn-danger delete-button">Eliminar</button>
+                                <a href="{% url 'edit_property' property.id %}" class="btn btn-primary">Editar</a>
+                                <button id="delete-button-{{property.id}}" data-id="{{property.id}}" type="submit" class="btn btn-danger delete-button">Eliminar</button>
                             </div>
                         </div>
                     </div>
