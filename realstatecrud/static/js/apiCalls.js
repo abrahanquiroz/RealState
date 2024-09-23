@@ -1,6 +1,3 @@
-
-
-
 function getCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');

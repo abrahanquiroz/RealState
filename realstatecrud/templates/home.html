@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+    <div class="hero text-center py-5">
+        <h1 class="rounded">Bienvenido a RealState</h1>
+        <p>Encuentra o crea las mejores propiedades</p>
+        <a href="{% url 'list_properties' %}" class="btn btn-primary">Ver Propiedades</a>
+    </div>
+{% endblock %}

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = "django-insecure-aztf(twy^nzb)23^2j4c$^%hn_p(rhv_0boe@i7+%9=u8crz6b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -77,13 +78,13 @@ WSGI_APPLICATION = "crud_propiedades.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "propiedadesdb",
-        "USER": "postgres",
-        "PASSWORD": "mysecretpassword",
-        "HOST": "localhost",
-        "PORT": "5432",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'realstate_db',
+        'USER': 'miusuario',
+        'PASSWORD': 'micontraseña',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
